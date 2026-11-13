@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Cairn 色彩体系
+
+  设计取向：深色底 + 半透明玻璃层。
+  为什么深色：液态玻璃的折射效果依赖背景有明显明暗与色彩变化，
+  深色底配彩色光斑，折射边缘才能看出弯折。浅色底折射几乎不可见。
+
+  所有玻璃色值都带 alpha，因为它们要叠在折射背景之上。
+-->
+<resources>
+
+    <!-- ===== 基底 ===== -->
+    <color name="bg_base">#FF0B0E14</color>
+    <color name="bg_elevated">#FF141A24</color>
+
+    <!-- ===== 玻璃层（叠在折射背景之上） ===== -->
+    <!-- 玻璃本体色：极淡的白，太高会盖住折射 -->
+    <color name="glass_tint">#14FFFFFF</color>
+    <!-- 悬浮元素用的稍厚玻璃 -->
+    <color name="glass_tint_strong">#22FFFFFF</color>
+    <!-- 导航栏玻璃 -->
+    <color name="glass_tint_nav">#1AFFFFFF</color>
+    <!-- 按下态 -->
+    <color name="glass_tint_pressed">#2EFFFFFF</color>
+
+    <!-- ===== 高光与描边 ===== -->
+    <color name="glass_highlight">#5CFFFFFF</color>
+    <color name="glass_border">#1FFFFFFF</color>
+    <color name="glass_sheen">#33FFFFFF</color>
+
+    <!-- ===== 文字 ===== -->
+    <color name="text_primary">#FFF2F5FA</color>
+    <color name="text_secondary">#B3C8D2E0</color>
+    <color name="text_tertiary">#66A8B4C8</color>
+
+    <!-- ===== 语义色（状态） ===== -->
+    <color name="ok">#FF4ADE80</color>
+    <color name="warn">#FFFBBF24</color>
+    <color name="err">#FFF87171</color>
+    <color name="info">#FF60A5FA</color>
+
+    <!-- ===== 背景光斑（GlassBackdrop 用） ===== -->
+    <color name="blob_cyan">#6642E8F5</color>
+    <color name="blob_purple">#66A855F7</color>
+    <color name="blob_orange">#55FB923C</color>
+    <color name="blob_blue">#554F8CFF</color>
+
+</resources>

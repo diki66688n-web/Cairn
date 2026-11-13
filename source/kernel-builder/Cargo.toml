@@ -1,0 +1,9 @@
+[package]
+name = "cairn-kernel-builder"
+version = "1.0.1"
+edition = "2021"
+# Mixed-license source package: see per-file SPDX headers and README.md.
+# AND describes both components in this package, not dual-license choice.
+license = "GPL-3.0-only AND GPL-2.0-only"
+
+[dependencies]

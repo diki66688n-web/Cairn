@@ -1,0 +1,7 @@
+package com.cairn.manager;
+import android.content.*;import android.content.res.Configuration;import android.os.LocaleList;import java.util.Locale;
+public final class Language {
+ public static Context wrap(Context c){String tag=c.getSharedPreferences("language",0).getString("selection","system");Configuration cfg=new Configuration(c.getResources().getConfiguration());if(!tag.equals("system"))cfg.setLocales(new LocaleList(Locale.forLanguageTag(tag)));return c.createConfigurationContext(cfg);}
+ public static String text(Context c,String en,String zh){return c.getResources().getConfiguration().getLocales().get(0).getLanguage().equals("zh")?zh:en;}
+ public static void choose(android.app.Activity a){String[] tags={"system","en","zh-CN"};String selected=a.getSharedPreferences("language",0).getString("selection","system");int index=0;for(int i=0;i<tags.length;i++)if(tags[i].equals(selected))index=i;new android.app.AlertDialog.Builder(a).setTitle("Language / 语言").setSingleChoiceItems(new String[]{"System default / 跟随系统","English","简体中文"},index,(d,i)->{a.getSharedPreferences("language",0).edit().putString("selection",tags[i]).apply();d.dismiss();a.recreate();}).setNegativeButton(android.R.string.cancel,null).show();}
+}

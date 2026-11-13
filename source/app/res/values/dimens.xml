@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Cairn 尺寸与圆角体系
+
+  圆角策略：
+    卡片     20dp  —— 大圆角是 iOS 26 的明显特征
+    按钮     16dp
+    导航栏   28dp
+    悬浮球   50%（圆形，用 radius 表达）
+    小组件   12dp
+-->
+<resources>
+
+    <!-- ===== 圆角 ===== -->
+    <dimen name="radius_card">20dp</dimen>
+    <dimen name="radius_button">16dp</dimen>
+    <dimen name="radius_nav">28dp</dimen>
+    <dimen name="radius_chip">12dp</dimen>
+    <dimen name="radius_pill">100dp</dimen>
+
+    <!-- ===== 间距 ===== -->
+    <dimen name="space_xs">4dp</dimen>
+    <dimen name="space_s">8dp</dimen>
+    <dimen name="space_m">16dp</dimen>
+    <dimen name="space_l">24dp</dimen>
+    <dimen name="space_xl">32dp</dimen>
+
+    <!-- ===== 页面边距 ===== -->
+    <dimen name="page_margin">20dp</dimen>
+
+    <!-- ===== 玻璃折射参数 ===== -->
+    <!--
+      refraction_height：折射带宽度。只有离边缘这么近的像素才弯折。
+      太小看不出效果，太大整块玻璃都在扭，画面会"碎"。
+    -->
+    <dimen name="glass_refraction_height">26dp</dimen>
+    <!--
+      refraction_amount：最大位移量。这个决定"玻璃有多厚"。
+      超过 48dp 会明显失真。
+    -->
+    <dimen name="glass_refraction_amount">22dp</dimen>
+
+    <!-- ===== 控件高度 ===== -->
+    <dimen name="nav_height">72dp</dimen>
+    <dimen name="button_height">52dp</dimen>
+    <dimen name="row_height">64dp</dimen>
+
+    <!-- ===== 字号 ===== -->
+    <dimen name="text_display">32sp</dimen>
+    <dimen name="text_title">20sp</dimen>
+    <dimen name="text_body">15sp</dimen>
+    <dimen name="text_caption">13sp</dimen>
+    <dimen name="text_mono">13sp</dimen>
+
+</resources>

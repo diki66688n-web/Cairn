@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  应用主题。
+
+  关键设置：
+    android:windowBackground 设为深色 —— 玻璃折射需要背景有内容，
+                              纯白背景折射完全看不出来
+    windowTranslucentStatus  让内容延伸到状态栏下面，玻璃才能盖住边缘
+    windowLightStatusBar=false 深色底用浅色图标
+-->
+<resources>
+
+    <style name="Theme.Cairn" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/bg_base</item>
+        <item name="android:colorBackground">@color/bg_base</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+</resources>

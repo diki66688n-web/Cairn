@@ -1,0 +1,13 @@
+package com.cairn.manager;
+import android.app.*;import android.content.*;import android.os.*;import android.graphics.Typeface;import android.widget.*;
+/** Session-local installation transcript, not a root command terminal. */
+public final class InstallConsole extends Activity {
+ static volatile String transcript="";static volatile boolean running;static volatile java.io.File liveLog;
+ private TextView out,heading;private ScrollView scroll;private final Handler h=new Handler();
+ static synchronized void append(String s){transcript+=s+"\n";if(transcript.length()>180000)transcript=transcript.substring(transcript.length()-180000);}
+ static void start(Activity a){liveLog=null;transcript="   ____      _\n  / ___|__ _(_)_ __ _ __\n | |   / _` | | '__| '_ \\n | |__| (_| | | |  | | | |\n  \\____\\__,_|_|_|  |_| |_|\n\n CAIRN · Script modules, no mounts.\n No SELinux policy modifications.\n────────────────────────────────\n";running=true;a.startActivity(new Intent(a,InstallConsole.class));}
+ private final Runnable update=new Runnable(){public void run(){String live="";try{java.io.File f=liveLog;if(f!=null&&f.isFile()){try(java.io.FileInputStream in=new java.io.FileInputStream(f)){byte[] b=new byte[(int)Math.min(f.length(),131072)];int n=in.read(b);if(n>0)live=new String(b,0,n,"UTF-8");}}}catch(Exception ignored){}out.setText(transcript+live);heading.setText(running?"Installing module":"Installation finished");scroll.post(()->scroll.fullScroll(ScrollView.FOCUS_DOWN));h.postDelayed(this,250);}};
+ @Override public void onCreate(Bundle b){super.onCreate(b);LinearLayout root=new LinearLayout(this);root.setOrientation(1);root.setPadding(28,54,28,32);root.setBackgroundColor(0xff101319);heading=new TextView(this);heading.setTextSize(24);heading.setTextColor(0xff7fd1ff);root.addView(heading);TextView sub=new TextView(this);sub.setText("Extract → customize.sh → Stage → Reboot");sub.setTextColor(0xff8b95a5);sub.setPadding(0,14,0,24);root.addView(sub);scroll=new ScrollView(this);out=new TextView(this);out.setTextColor(0xffb8f4cb);out.setTextSize(12);out.setTypeface(Typeface.MONOSPACE);out.setTextIsSelectable(true);scroll.addView(out);root.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));Button back=new Button(this);back.setText("Back to modules");back.setOnClickListener(v->{if(running)Toast.makeText(this,"Installation in progress; please wait",0).show();else finish();});root.addView(back);setContentView(root);h.post(update);}
+ @Override public void onBackPressed(){if(!running)super.onBackPressed();}
+ @Override protected void onDestroy(){h.removeCallbacks(update);super.onDestroy();}
+}
