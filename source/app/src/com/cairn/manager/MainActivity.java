@@ -914,17 +914,6 @@ setContentView(buildUi());
         p.addView(btnLogClear, new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, dp(50)));
         bindBackdrop(btnLogClear);
-        /* ===== 临时调试入口，调试完连同 DebugTerminal.java 一起删 ===== */
-        GlassCard btnDbg = GlassComponents.button(this, "调试终端（临时）", 18f,
-                0x1AFFFFFF, 0xFF7FA8D0);
-        btnDbg.setOnClickListener(v ->
-                startActivity(new android.content.Intent(this, DebugTerminal.class)));
-        LinearLayout.LayoutParams dlp = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, dp(50));
-        dlp.topMargin = dp(10);
-        p.addView(btnDbg, dlp);
-        bindBackdrop(btnDbg);
-
         TextView foot = new TextView(this);
         foot.setText("\n内核入口 probe() / 守护进程 /data/adb/cnd\n"
                 + "本应用不修改 SELinux 策略，不新增 context");

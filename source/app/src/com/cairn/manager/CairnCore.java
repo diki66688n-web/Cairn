@@ -77,7 +77,6 @@ public final class CairnCore {
      *
      * 这个旧路径只在"升级时清理残留"里出现，不再有任何判断逻辑。
      */
-    public static final String LEGACY_SOCK = BASE + "/daemon.sock";
 
     private final File cmdFile;
     private final File outFile;
