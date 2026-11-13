@@ -27,7 +27,7 @@ Cairn is an experimental Android root and script-module manager. It combines a d
 
 ## Status and limitations
 
-This is not a universal root installer or a drop-in KernelSU replacement. Builds target the tested PLU110 kernel image; hardcoded symbols and structure offsets are not portable. Do not flash an image on another device or kernel revision.
+This is not a universal root installer or a drop-in KernelSU replacement. Builds target the tested OnePlus Turbo 6 kernel image; hardcoded symbols and structure offsets are not portable. Do not flash an image on another device or kernel revision.
 
 The wl5 device boot, UID authorization and whitelist have been user-verified. Later module transaction and WebUI changes have build/QEMU coverage, but not complete device acceptance. The QEMU init is a test harness, not Android init's parser. Keystore-based boot grant restoration occurs after unlock and depends on boot-broadcast delivery. `SKIPUNZIP`, complete KSU installer compatibility, crash-consistent transactions and complete module lifecycle support remain unfinished.
 
@@ -56,6 +56,14 @@ Development software can prevent boot or cause data loss. Keep a stock boot imag
 ## AI assistance disclosure
 
 Parts of this project were developed with AI assistance, including portions of code, documentation, debugging, and test preparation. AI assistance does not guarantee correctness, security, or license compliance, and does not replace human review and device validation. This disclosure does not change third-party attribution or applicable licenses.
+
+## Device support and community
+
+**Currently, the OnePlus Turbo 6 is the only device tested on real hardware. Other devices have not been adapted or validated.** Compatibility is limited to the tested kernel build, not every firmware version. Do not flash these images on other devices or unverified kernels.
+
+We are recruiting contributors for additional device ports and real-hardware testing. Contact [diki66688n@gmail.com](mailto:diki66688n@gmail.com) with your device model and kernel version.
+
+**Telegram channel:** https://t.me/auroraksp
 
 ## Contact
 

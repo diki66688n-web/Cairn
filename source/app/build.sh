@@ -189,7 +189,7 @@ echo "    libcairnd.so=$(stat -c%s "$CAIRND_SRC") bytes @ lib/arm64-v8a/ (static
 step "7/8 zipalign"
 zipalign -f -p 4 build/tmp.apk build/aligned.apk > /tmp/b_al.log 2>&1 || { cat /tmp/b_al.log; fail zipalign; }
 step "8/8 sign"
-apksigner sign --ks build/cairn.keystore --ks-pass pass:cairn123 --key-pass pass:cairn123 --ks-key-alias cairn --out "build/$OUT" build/aligned.apk > /tmp/b_sign.log 2>&1 || { cat /tmp/b_sign.log; fail sign; }
+apksigner sign --ks "${CAIRN_SIGNING_KEYSTORE:?Set CAIRN_SIGNING_KEYSTORE}" --ks-pass env:CAIRN_STORE_PASSWORD --key-pass env:CAIRN_KEY_PASSWORD --ks-key-alias "${CAIRN_KEY_ALIAS:?Set CAIRN_KEY_ALIAS}" --out "build/$OUT" build/aligned.apk > /tmp/b_sign.log 2>&1 || { cat /tmp/b_sign.log; fail sign; }
 apksigner verify "build/$OUT" > /dev/null 2>&1 || fail verify
 echo
 echo "=== BUILD OK ==="

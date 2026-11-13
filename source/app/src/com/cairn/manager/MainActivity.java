@@ -1109,7 +1109,7 @@ setContentView(buildUi());
             return;
         }
         boolean ok = box.save(hex);
-        flog.log("KEY", "k0=0x" + Long.toHexString(k0) + " k1=0x" + Long.toHexString(k1));
+        flog.log("KEY", "Key loaded (value redacted)");
         keyLoaded = true;
         flog.log("KEY", "save=" + ok + " mode=" + box.mode()
                  + " boxLog=[" + box.logText().replace("\n", "|") + "]");
@@ -1144,8 +1144,7 @@ setContentView(buildUi());
                     st = ST_NO_ROOT;
                     detail = "probe=1  补丁在位，但没有密钥";
                 } else {
-                    flog.log("AUTH", "selfTest start k0="
-                            + Long.toHexString(k0) + " k1=" + Long.toHexString(k1));
+                    flog.log("AUTH", "selfTest start (key redacted)");
                     CairnCore.Res r = core.selfTest(k0, k1);
                     flog.log("AUTH", "selfTest rc=" + r.rc
                              + " out=[" + r.text().replace("\n", "|") + "]");
