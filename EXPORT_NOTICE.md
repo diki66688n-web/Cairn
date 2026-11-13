@@ -1,0 +1,2 @@
+# Sanitized development snapshot
+Private review snapshot of Cairn V1.0.1. Authorization key constants are replaced with zero placeholders; this export MUST NOT be used to build or flash a working kernel without secure provisioning. Firmware, APKs, binaries, signing materials, logs, and unverified UI libraries are omitted. Builds require dependency/provenance and path cleanup. Original development workspace remains unchanged.
