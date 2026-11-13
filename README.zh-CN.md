@@ -37,7 +37,7 @@ wl5 真机开机、root 授权和白名单已由用户确认。后续模块暂�
 - APatch：安装过程展示参考，Cairn 使用独立横幅。
 - Toybox：随包 shell，保留其原许可证与源文件通知。
 - Android、LLVM、GNU 工具链。
-- LiquidGlass 二进制依赖：来源、版本及许可证尚待审计，未完成前不可视作已满足公开分发条件。
+- 玻璃导航：移植 KernelSU 指定提交的源码，使用 miuix 0.9.4；来源、许可与修改见 [UI_SOURCES.md](UI_SOURCES.md)。旧玻璃二进制已退出构建。
 
 英文 README 含项目链接。参见 [许可证方案](LICENSING.md) 和 [发布检查表](RELEASE_CHECKLIST.md)。
 
@@ -62,3 +62,7 @@ wl5 真机开机、root 授权和白名单已由用户确认。后续模块暂�
 ## 联系方式
 
 如果发现问题，或对代码来源、参考标注、开源协议及第三方权益有疑问，请联系维护者：[diki66688n@gmail.com](mailto:diki66688n@gmail.com)。请附上相关细节，便于核查和处理。
+
+## 液态玻璃导航更新
+
+已移植 KSU 浮动导航、拖动阻尼及高光相关源码，替换旧二进制依赖；深色导航效果已获用户确认。页面卡片仍是原自绘组件，不冒称整页 Compose 移植完成。具体来源、修改与许可见 [UI_SOURCES.md](UI_SOURCES.md)，独立构建流程仍待整合。

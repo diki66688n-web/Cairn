@@ -45,7 +45,7 @@ import java.util.List;
 import java.util.Map;
 
 /* Pages are built programmatically; the APK also packages Android theme/resource data through aapt2. */
-public class MainActivity extends Activity {
+public class MainActivity extends androidx.activity.ComponentActivity {
     @Override protected void attachBaseContext(android.content.Context base){super.attachBaseContext(Language.wrap(base));}
 
     private String VERSION = "?";   // onCreate 里从 manifest 读取，杜绝写死

@@ -42,7 +42,7 @@ Current build entry points: `app/build.sh`, `daemon/build.sh`, and `tools/build_
 - [APatch](https://github.com/bmax121/APatch): installer presentation reference. Cairn uses its own banner.
 - [Toybox](https://landley.net/toybox/): bundled shell, built against Android's bionic headers/runtime. Preserve Toybox's license and relevant source notices.
 - Android platform tools and LLVM/GNU build tools.
-- Bundled `liquidglass.jar` / `LiquidGlass.dex`: dependency origin, exact version and license must be verified before redistribution. This is a **release blocker**, not a cleared dependency.
+- Glass navigation: KSU-derived source + miuix 0.9.4; see [UI_SOURCES.md](UI_SOURCES.md). Old unknown-origin UI binaries are no longer used.
 
 See [LICENSING.md](LICENSING.md) and [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md).
 
@@ -68,3 +68,7 @@ We are recruiting contributors for additional device ports and real-hardware tes
 ## Contact
 
 If you encounter an issue, or have questions about code attribution, licensing, or third-party rights, please contact the maintainer at [diki66688n@gmail.com](mailto:diki66688n@gmail.com). Please include relevant details so the issue can be investigated and addressed.
+
+## Glass navigation update
+
+KSU-derived floating navigation, drag physics and highlights now replace the old binary library. The dark navigation has user confirmation. This is not a full Compose page rewrite. See [UI_SOURCES.md](UI_SOURCES.md) for exact sources, modifications and license notices. Clean-checkout build scripts still need consolidation.
